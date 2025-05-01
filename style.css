@@ -46,6 +46,7 @@ body {
 .nav-links a:hover {
   color: #999;
 }
+
 /* Projects Section */
 .projects-section {
   padding: 40px 10%;
@@ -127,6 +128,11 @@ body {
 /* Additional Images on Hover */
 .additional-images {
   display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;  /* Ensure it takes up the same height as the main image */
 }
 
 .project-card:hover .additional-images {
@@ -135,8 +141,9 @@ body {
 
 .additional-images img {
   width: 100%;
-  height: auto;
-  max-height: 150px;
-  object-fit: cover;
-  margin-top: 10px;
+  height: 100%;  /* Ensure hover image covers the full space */
+  object-fit: cover;  /* Maintain aspect ratio while covering space */
+  position: absolute;
+  top: 0;
+  left: 0;
 }
