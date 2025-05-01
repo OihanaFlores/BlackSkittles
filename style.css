@@ -67,7 +67,7 @@ body {
   justify-items: center;
 }
 
-/* Individual Project Card */
+/* Project Card */
 .project-card {
   position: relative;
   width: 100%;
@@ -77,20 +77,15 @@ body {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   background-color: #fff;
   transition: transform 0.3s ease;
-  display: flex;
-  flex-direction: column;
 }
 
-/* Image Style */
+/* Main Project Image */
 .project-image {
-  position: absolute;
-  top: 0;
-  left: 0;
   width: 100%;
   height: 100%;
   background-size: cover;
   background-position: center;
-  transition: opacity 0.3s ease;
+  position: relative;
 }
 
 /* Hover Overlay */
@@ -101,12 +96,11 @@ body {
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5);
-  color: white;
-  opacity: 0;
   display: flex;
-  justify-content: center;
-  align-items: center;
   flex-direction: column;
+  justify-content: flex-end; /* Push title to bottom */
+  align-items: center;
+  opacity: 0;
   transition: opacity 0.3s ease;
   padding: 20px;
   box-sizing: border-box;
@@ -116,52 +110,45 @@ body {
   opacity: 1;
 }
 
-.project-card:hover {
-  transform: scale(1.05);
-}
-
-/* Project Title - Position it at the bottom */
+/* Project Title */
 .project-title {
   font-size: 20px;
   font-weight: bold;
-  margin-bottom: 15px;
-  position: absolute;
-  bottom: 10px;  /* Position the title at the bottom */
-  left: 50%;
-  transform: translateX(-50%);  /* Center the title horizontally */
+  color: white;
+  margin-bottom: 10px;
   opacity: 0;
   transition: opacity 0.3s ease;
 }
 
 .project-card:hover .project-title {
-  opacity: 1;  /* Show the title when hovering */
+  opacity: 1;
 }
 
-/* Additional Images on Hover */
+/* Additional Images */
 .additional-images {
-  display: none;
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-}
-
-.project-card:hover .additional-images {
-  display: block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .additional-images img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  position: absolute;
-  top: 0;
-  left: 0;
   opacity: 0;
   transition: opacity 0.3s ease;
 }
 
 .project-card:hover .additional-images img {
-  opacity: 1;  /* Show the hover image when hovering */
+  opacity: 1;
+}
+
+/* Hover Effect */
+.project-card:hover {
+  transform: scale(1.05);
 }
