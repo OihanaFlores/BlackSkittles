@@ -98,7 +98,7 @@ body {
   background-color: rgba(0, 0, 0, 0.5);
   display: flex;
   flex-direction: column;
-  justify-content: flex-end; /* Push title to bottom */
+  justify-content: center;
   align-items: center;
   opacity: 0;
   transition: opacity 0.3s ease;
@@ -109,26 +109,6 @@ body {
 .project-card:hover .overlay {
   opacity: 1;
 }
-
-/* Project Title */
-.project-title {
-  font-size: 20px;
-  font-weight: bold;
-  color: white;
-  position: absolute;
-  bottom: 10px;
-  left: 50%;
-  transform: translateX(-50%);
-  text-shadow: 1px 1px 5px black;
-  margin: 0;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-.project-card:hover .project-title {
-  opacity: 1;
-}
-
 
 /* Additional Images */
 .additional-images {
@@ -157,4 +137,9 @@ body {
 /* Hover Effect */
 .project-card:hover {
   transform: scale(1.05);
+}
+
+/* Optional: This is no longer used */
+.project-title {
+  display: none;
 }
