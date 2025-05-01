@@ -77,6 +77,8 @@ body {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   background-color: #fff;
   transition: transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
 }
 
 /* Image Style */
@@ -118,11 +120,21 @@ body {
   transform: scale(1.05);
 }
 
-/* Project Title */
+/* Project Title - Position it at the bottom */
 .project-title {
   font-size: 20px;
   font-weight: bold;
   margin-bottom: 15px;
+  position: absolute;
+  bottom: 10px;  /* Position the title at the bottom */
+  left: 50%;
+  transform: translateX(-50%);  /* Center the title horizontally */
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.project-card:hover .project-title {
+  opacity: 1;  /* Show the title when hovering */
 }
 
 /* Additional Images on Hover */
@@ -132,7 +144,7 @@ body {
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;  /* Ensure it takes up the same height as the main image */
+  height: 100%;
 }
 
 .project-card:hover .additional-images {
@@ -141,9 +153,15 @@ body {
 
 .additional-images img {
   width: 100%;
-  height: 100%;  /* Ensure hover image covers the full space */
-  object-fit: cover;  /* Maintain aspect ratio while covering space */
+  height: 100%;
+  object-fit: cover;
   position: absolute;
   top: 0;
   left: 0;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.project-card:hover .additional-images img {
+  opacity: 1;  /* Show the hover image when hovering */
 }
