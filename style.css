@@ -1,27 +1,136 @@
-/* Project Title (inside .additional-images) */
-.project-title {
-  font-size: 18px;
-  font-weight: bold;
-  color: white;
-  text-shadow: 1px 1px 5px black;
-  text-align: center;
+body {
   margin: 0;
-  padding: 10px 15px;
-  background: rgba(0, 0, 0, 0.6);
+  font-family: Verdana, sans-serif;
+  background-color: #f3f3f3;
+  text-align: center;
+  color: #4c4c4c;
+}
+
+.site-header {
+  padding: 40px 20px;
+}
+
+.logo-circle {
+  width: 80px;
+  height: 80px;
+  background-color: #666;
+  color: white;
+  font-size: 28px;
+  font-weight: bold;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 10px;
+}
+
+.subtitle {
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+.nav-links {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  font-size: 18px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #4c4c4c;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: #999;
+}
+
+/* Projects Section */
+.projects-section {
+  padding: 40px 10%;
+  text-align: center;
+}
+
+.projects-section h2 {
+  font-size: 2.5em;
+  margin-bottom: 30px;
+  color: #333;
+}
+
+/* Project Grid Layout */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 30px;
+  justify-items: center;
+}
+
+/* Project Card */
+.project-card {
+  position: relative;
   width: 100%;
+  height: 350px;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  transition: transform 0.3s ease;
+}
+
+/* Main Project Image */
+.project-image {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+/* Hover Overlay */
+.overlay {
   position: absolute;
-  bottom: 0;
+  top: 0;
   left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end; /* Push title to bottom */
+  align-items: center;
   opacity: 0;
   transition: opacity 0.3s ease;
+  padding: 20px;
   box-sizing: border-box;
+}
+
+.project-card:hover .overlay {
+  opacity: 1;
+}
+
+/* Project Title */
+.project-title {
+  font-size: 20px;
+  font-weight: bold;
+  color: white;
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-shadow: 1px 1px 5px black;
+  margin: 0;
+  opacity: 0;
+  transition: opacity 0.3s ease;
 }
 
 .project-card:hover .project-title {
   opacity: 1;
 }
 
-/* Additional Images container */
+
+/* Additional Images */
 .additional-images {
   position: absolute;
   top: 0;
@@ -29,24 +138,23 @@
   width: 100%;
   height: 100%;
   display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
+  justify-content: center;
   align-items: center;
 }
 
-/* Hover Image */
 .additional-images img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   opacity: 0;
   transition: opacity 0.3s ease;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 1;
 }
 
 .project-card:hover .additional-images img {
   opacity: 1;
+}
+
+/* Hover Effect */
+.project-card:hover {
+  transform: scale(1.05);
 }
