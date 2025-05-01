@@ -115,7 +115,12 @@ body {
   font-size: 20px;
   font-weight: bold;
   color: white;
-  margin-bottom: 10px;
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-shadow: 1px 1px 5px black;
+  margin: 0;
   opacity: 0;
   transition: opacity 0.3s ease;
 }
@@ -123,6 +128,7 @@ body {
 .project-card:hover .project-title {
   opacity: 1;
 }
+
 
 /* Additional Images */
 .additional-images {
